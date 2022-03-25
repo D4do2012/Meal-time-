@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
+
+  <title></title>
+</head>
+
+<body>
+  <h3>Successfully added, thank you!</h3>
+  <br>
+  <h3>Click the logo to go back to homepage.</h3>
+  <br>
+  <h1><a href="/"><img src="{{ url_for('static', filename='Meal_Time_logo.jpeg')}} " width=65><span class="logo_colour"></span></a></h1>
+
+</body>
+
+</html>
+
+{% endblock %}

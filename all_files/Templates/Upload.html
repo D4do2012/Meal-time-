@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+
+  <title>Upload Your Recipes to be a part of the Meal Time</title>
+</head>
+
+<body>
+  <h1>Add Your Recipe Here</h1>
+  <p>
+  <h3>Add the following detail to add your recipe to Meal Time then
+    click the 'submit' button.</h3>
+  </p>
+  <form method='post' enctype="multipart/form-data">
+    <table>
+      <tr>
+
+
+        <td><input type='text' placeholder="Name" name='RecipeNameF'></td>
+
+        <td><input type='text' placeholder="Ingredients" name='RecipeIngredientF'></td>
+
+        <td><input type='text' placeholder="Cooking" name='RecipeDescriptionF'></td>
+
+        <td><input type='file' placeholder="Photo" name='RecipeImageF'></td>
+
+        <td><input type='text' placeholder="Time min" name='RecipeTimeF'></td>
+
+
+        <td align=right><input type='submit' class="button2"></td>
+      </tr>
+
+    </table>
+
+
+  </form>
+</body>
+
+</html>
+
+{% endblock %}

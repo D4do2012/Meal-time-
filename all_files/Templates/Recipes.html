@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block content %}
+<!--------- Contact Us block ---------->
+<!doctype>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div id=""="Recipes" /div>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+
+    <title>See our recipes!</title>
+</head>
+
+<body>
+  <h1>Check Out All Our Amazing Recipes</h1>
+  <p><h3>This list shows all Meal Time Options</h3></p>
+
+  <table border=2>
+    {% for Recipe_Ingredient in recipe %}
+    <tr>
+      <td><b>{{ Recipe_Ingredient[0] }}</b></td>
+      <td><b>{{ Recipe_Ingredient[1] }}</b></td>
+      <td>{{ Recipe_Ingredient[2] }}</td>
+      <!-- Be careful on None data: if no data is supplied in database, -->
+      <!-- you should catch it with if-else condition for None (NoneType) -->
+      {% if Recipe_Ingredient[3] == None %}
+      <td>(no photo)</td>
+      {% else %}
+      <td><img src="{{ url_for('static', filename=Recipe_Ingredient[3]) }}" width=50></td>
+      {% endif %}
+
+    </tr>
+
+    {% endfor %}
+
+  </table>
+</body>
+</html>
+  {% endblock %}

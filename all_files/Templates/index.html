@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Meal Time</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+
+
+        <!-- class="logo_colour", allows you to change the colour of the text -->
+        <h1><a href="/"><img src="{{ url_for('static', filename='Meal_Time_logo.jpeg')}} " width=65><span class="logo_colour"></span></a></h1>
+        <h2>Meals Made Easy!</h2>
+
+
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li {% if tag == 'search' %}class="selected" {% endif %}><a href="/search">search</a></li>
+          <li {% if tag == 'recipes' %}class="selected" {% endif %}><a href="/recipes">recipes</a></li>
+          <li {% if tag == 'upload' %}class="selected" {% endif %}><a href="/upload">upload</a></li>
+
+
+
+
+          <!-- add recipe of the week section-->
+          <sidebar float=left>
+            <p>
+            <h3>Recipe video of the week</h3>
+            </p>
+          </sidebar>
+          <p> <iframe class='elem-to-center' width="560" height="315" src="https://www.youtube.com/embed/mhDJNfV7hjk" title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+
+
+
+
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+
+
+      {% block content %}
+        {% endblock %}
+
+
+      </div>
+    </div>
+</body>
+
+</html>
